@@ -1,0 +1,37 @@
+.device-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  max-width: 300px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  img {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 5px 0;
+  }
+}

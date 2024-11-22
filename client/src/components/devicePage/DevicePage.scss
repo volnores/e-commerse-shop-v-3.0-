@@ -1,0 +1,60 @@
+.device-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.device-detail {
+  display: flex;
+  background-color: blue;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.device-image {
+  .device-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.device-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.device-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.device-price {
+  font-size: 20px;
+  color: #2e8b57;
+  margin: 0 0 10px;
+}
+
+.device-description {
+  font-size: 16px;
+  color: #666;
+}
+
+.loading {
+  font-size: 20px;
+  color: #333;
+}
+
+.error {
+  font-size: 20px;
+  color: red;
+}

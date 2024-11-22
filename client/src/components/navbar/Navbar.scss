@@ -1,0 +1,85 @@
+$primary-color: #5797ff;
+$secondary-color: #11e76a;
+$secondary-color-hover: #00d459;
+$font-color: #fff;
+$border-radius: 5px;
+$logout-color: #ff4c4c;
+$logout-color-hover: #ff0000;
+
+.navbar {
+  background-color: $primary-color;
+  min-height: 80px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-brand {
+    font-size: 1.5em;
+    color: $font-color;
+    text-decoration: none;
+  }
+
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    .navbar-item {
+      a {
+        color: $font-color;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+nav {
+  display: flex;
+
+  .right-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+button {
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: $font-color;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $secondary-color-hover;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.logout-button {
+  background-color: $logout-color;
+
+  &:hover {
+    background-color: $logout-color-hover;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}

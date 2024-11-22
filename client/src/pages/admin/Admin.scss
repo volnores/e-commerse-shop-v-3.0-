@@ -1,0 +1,101 @@
+$primary-color: #307fff;
+$background-color: #ffffff;
+$text-color: #333;
+$logout-color: #ff4c4c;
+$logout-color-hover: #ff0000;
+$border-radius: 5px;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  .btn {
+    display: flex;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); //
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-btn {
+  background-color: $logout-color;
+
+  &:hover {
+    background-color: $logout-color-hover;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.564);
+  border-radius: 3px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.564);
+  border-radius: 3px;
+}
