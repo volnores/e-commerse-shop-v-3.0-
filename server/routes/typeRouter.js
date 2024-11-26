@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import * as typeController from '../controllers/TypeController.js';
-import { checkRoleMiddleware } from '../middleware/checkRolemiddleware.js';
+import { checkRoleMiddleware } from '../middleware/checkRoleMiddleware.js';
 const router = new Router();
 
 router.post('/', checkRoleMiddleware('ADMIN'), typeController.create);

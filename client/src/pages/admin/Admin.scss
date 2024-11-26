@@ -24,9 +24,13 @@ $border-radius: 5px;
 }
 
 .item {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
   .btn {
     display: flex;
     padding: 10px 20px;
+    min-width: 400px;
     font-size: 16px;
     color: #fff;
     background-color: $primary-color;
@@ -48,6 +52,7 @@ $border-radius: 5px;
 
 .modal {
   position: fixed;
+  min-width: 400px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

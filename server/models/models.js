@@ -47,7 +47,7 @@ const Device = new mongoose.Schema(
 const Type = new mongoose.Schema(
   {
     id: { type: Number },
-    name: { type: String, unique: true },
+    name: { type: String, unique: true, required: true },
   },
   { timestamps: true },
 );

@@ -1,5 +1,16 @@
 .shop-container {
   padding: 20px;
+  width: 100%;
+
+  input {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
   h1 {
     text-align: center;

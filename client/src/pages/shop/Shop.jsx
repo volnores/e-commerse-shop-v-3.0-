@@ -1,11 +1,24 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DeviceCard from '../../components/DeviceCard/DeviceCard';
 import './Shop.scss';
-import Loader from '../../components/loader/Loader';
+import Loader from '../../components/Loader/Loader';
+import { setSearchByWords } from '../../store/slices/deviceSlice';
+import useDebounce from '../../hooks/useDebounse';
 
 const Shop = () => {
-  const { devices, isLoading, error } = useSelector((state) => state.devices);
+  const dispatch = useDispatch();
+  const { devices, searchByWords, isLoading, error } = useSelector((state) => state.devices);
+
+  const debounsedSearch = useDebounce(searchByWords, 300);
+
+  const filteredDevices = () => {
+    return devices.filter((item) =>
+      item.name.toLowerCase().includes(debounsedSearch.toLowerCase()),
+    );
+  };
+
+  const newFilteredDevices = filteredDevices();
 
   if (isLoading) {
     return <Loader />;
@@ -18,11 +31,17 @@ const Shop = () => {
   return (
     <div className="shop-container">
       <h1>Девайсы</h1>
+      <input
+        type="text"
+        placeholder="Поиск..."
+        value={searchByWords}
+        onChange={(e) => dispatch(setSearchByWords(e.target.value))}
+      />
       <div className="flex-container">
-        {devices.length > 0 ? (
-          devices.map((item) => <DeviceCard item={item} key={item._id} />)
+        {newFilteredDevices.length > 0 ? (
+          newFilteredDevices.map((item) => <DeviceCard item={item} key={item._id} />)
         ) : (
-          <p>Нет загруженных девайсов</p>
+          <h2>Ничего не найдено</h2>
         )}
       </div>
     </div>

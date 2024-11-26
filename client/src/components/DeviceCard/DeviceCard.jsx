@@ -1,5 +1,5 @@
 import React from 'react';
-import './DeviceCard.scss'; // Импортируем стили
+import './DeviceCard.scss';
 import { useNavigate } from 'react-router-dom';
 import { DEVICE_ROUTE } from '../../utils/consts';
 import { useDispatch } from 'react-redux';
@@ -14,7 +14,7 @@ const DeviceCard = ({ item }) => {
   };
   return (
     <div className="device-card" onClick={handleNavigate}>
-      <img src={item.imgUrl} alt={item.name} />
+      <img src={item.img} alt={item.name} />
       <h3>{item.name}</h3>
       <p>Price: ${item.price}</p>
     </div>

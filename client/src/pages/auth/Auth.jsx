@@ -31,6 +31,9 @@ const Auth = () => {
     <div className="register-form-container">
       <h2>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
       <form className="register-form" onSubmit={onSubmit}>
+        <h4 style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <p>name: admin@mail.ru</p> <p>password: admin</p>
+        </h4>
         <input
           type="text"
           placeholder="Имя пользователя"

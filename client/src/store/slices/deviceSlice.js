@@ -4,6 +4,7 @@ import apiClient from '../../intercentions/handleAxios';
 const initialState = {
   devices: JSON.parse(localStorage.getItem('devices')) || [],
   selectedDeviceID: JSON.parse(localStorage.getItem('devices/id')) || null,
+  searchByWords: '',
   isLoading: false,
   error: null,
 };
@@ -20,7 +21,6 @@ export const getDevices = createAsyncThunk('devices/getAll', async (thunkAPI) =>
 });
 
 export const createDevice = createAsyncThunk('devices/create', async (deviceData, thunkAPI) => {
-  const token = localStorage.getItem('token');
   try {
     const response = await apiClient.post(`${url}device`, deviceData);
     return response.data;
@@ -45,6 +45,11 @@ export const getDeviceId = createAsyncThunk('devices/getIdPage', async (id, thun
 const deviceSlice = createSlice({
   name: 'devices',
   initialState,
+  reducers: {
+    setSearchByWords: (state, action) => {
+      state.searchByWords = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getDevices.pending, (state) => {
       state.isLoading = true;
@@ -66,7 +71,6 @@ const deviceSlice = createSlice({
     });
     builder.addCase(createDevice.fulfilled, (state, action) => {
       state.isLoading = false;
-      console.log('Created device:', action.payload);
       state.devices.push(action.payload);
       state.error = null;
       localStorage.setItem('devices', JSON.stringify(state.devices));
@@ -90,5 +94,7 @@ const deviceSlice = createSlice({
     });
   },
 });
+
+export const { setSearchByWords } = deviceSlice.actions;
 
 export default deviceSlice.reducer;

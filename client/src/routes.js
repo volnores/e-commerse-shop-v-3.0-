@@ -1,6 +1,6 @@
 import Admin from './pages/admin/Admin';
 import Auth from './pages/auth/Auth';
-import Basket from './pages/Basket';
+import Basket from './pages/cart/Basket';
 import DevicePage from './components/devicePage/DevicePage';
 import Shop from './pages/shop/Shop';
 

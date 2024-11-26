@@ -71,6 +71,19 @@ button {
   }
 }
 
+.cart-btn {
+  background-color: #ffaa00;
+
+  &:hover {
+    background-color: #f38100;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  }
+}
+
 .logout-button {
   background-color: $logout-color;
 
@@ -81,5 +94,33 @@ button {
   &:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-center;
+    padding: 10px;
+
+    .navbar-menu {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .navbar-brand {
+      font-size: 1.2em;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .right-nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
