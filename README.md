@@ -1,2 +1,2 @@
-cd server / npm run dev
-cd client / npm run dev
+#cd server / npm run dev
+#cd client / npm run dev
